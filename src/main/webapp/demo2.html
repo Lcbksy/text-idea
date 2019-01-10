@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{message}}<br/>
+        <button  v-on:click="func('哦哦哦...')">点击按钮</button><br/>
+        <button  @click="func('哈哈哈...')">点击按钮</button>
+    </div>
+</body>
+</html>
+<script>
+    var vue = new Vue({
+        el:"#app",
+        data:{
+            message:"你好啊..."
+        },
+        methods:{
+            func:function (value) {
+                this.message=value;
+            }
+        }
+    })
+</script>

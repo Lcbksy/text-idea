@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" @keydown="func($event)" />
+    </div>
+
+</body>
+</html>
+<script>
+    var vue = new Vue({
+        el:"#app",
+        data:{
+
+        },
+        methods:{
+            func:function (e) {
+                var keycode = e.keyCode;
+                if(!(keycode>=48 && keycode<=57)){
+                    //阻止当前事件发生
+                    e.preventDefault();
+                }
+            }
+        }
+    })
+</script>

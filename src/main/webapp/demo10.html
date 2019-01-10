@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+    </div>
+
+</body>
+</html>
+<script>
+    var vue = new Vue({
+        el:"#app",
+        data:{
+            message:"哈哈哈..."
+        },
+        beforeCreate:function () {
+            showInfo("创建vue实例之前的钩子函数",this);
+        },
+        created:function () {
+            showInfo("创建vue实例后的钩子函数",this);
+        },
+        beforeMount:function () {
+            showInfo("装载dom对象之前的钩子函数",this);
+        },
+        mounted:function () {
+            showInfo("装载dom对象后的钩子函数",this)
+        }
+    });
+
+    function showInfo(str,e) {
+        console.log("-----------------------------")
+        console.log(str);
+        console.log("数据:"+e.message);
+        console.log("vue中申明的dom对象:");
+        console.log(e.$el);
+        console.log("真实的dom对象");
+        console.log(document.getElementById("app").innerHTML);
+    }
+</script>

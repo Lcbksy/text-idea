@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <span v-if="flag">哈哈</span>
+        <span v-show="flag">嘿嘿</span>
+        <button @click="func()" >提交</button>
+    </div>
+</body>
+</html>
+<script>
+    var vue = new Vue({
+        el:"#app",
+        data:{
+            flag:false
+        },
+        methods:{
+            func:function () {
+                this.flag=!this.flag;
+            }
+        }
+    })
+</script>

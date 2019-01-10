@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <table>
+        <tr>
+            <td>序号</td>
+            <td>名称</td>
+            <td>年龄</td>
+        </tr>
+        <tr v-for="(item,index) in users">
+            <td>{{index+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.age}}</td>
+        </tr>
+        </table>
+    </div>
+
+</body>
+</html>
+<script>
+    var vue = new Vue({
+        el:"#app",
+        data:{
+            users:[
+                {name:"张三",age:12},
+                {name:"张四",age:13},
+                {name:"张五",age:14}
+            ]
+        },
+        methods:{
+            func:function () {
+                
+            }
+        }
+    })
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <font v-bind:color="color1">你好啊....</font><br/>
+        <font :color="color2">你好啊....</font><hr/>
+        <a :href="url">百度链接</a><br/>
+        <a v-bind={href:url}>百度链接</a>
+    </div>
+
+</body>
+</html>
+<script>
+    var vue = new Vue({
+        el:"#app",
+        data:{
+            color1:"red",
+            color2:"blue",
+            url:"http://www.baidu.com"
+        },
+        methods:{
+            func:function () {
+                
+            }
+        }
+    })
+</script>

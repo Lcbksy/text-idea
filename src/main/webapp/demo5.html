@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" @keydown.enter="func()"/><br/>
+
+        <div v-text="message">
+            {{message}}
+        </div><br/>
+        <div v-html="message">
+            {{message}}
+        </div>
+    </div>
+
+
+
+</body>
+</html>
+<script>
+    var vue = new Vue({
+        el:"#app",
+        data:{
+            message:"<h1>123...</h1>"
+        },
+        methods:{
+            func:function () {
+                alert("提交...");
+            }
+        }
+    })
+</script>
